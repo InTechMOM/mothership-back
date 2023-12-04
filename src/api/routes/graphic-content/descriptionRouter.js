@@ -1,10 +1,8 @@
-const express = require('express');
+import express from "express";
+import descriptionController from "../../controllers/graphic-content/descriptionController.js";
 const descriptionRouter = express.Router();
-const descriptionController = require("../controllers/descriptionController")
-
 
 // Ver descripcion
-descriptionRouter.get('/description', descriptionController.getDescription);
+descriptionRouter.get("/description", descriptionController.getDescription);
 
-
-module.exports = descriptionRouter;
+export default descriptionRouter;

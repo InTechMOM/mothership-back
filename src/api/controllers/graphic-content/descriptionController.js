@@ -1,4 +1,4 @@
-const storyTelling = require('../services/descriptionService')
+import storyTelling from "../../services/descriptionService.js";
 
 /**
  * @openapi
@@ -23,16 +23,13 @@ const storyTelling = require('../services/descriptionService')
  *         description: Description not found
  */
 
+async function getDescription(req, res) {
+  try {
+    const description = await storyTelling.getDescription();
+    res.json(description);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
-async function getDescription(req, res){
-    try{
-        const description = await storyTelling.getDescription();
-        res.json(description);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    } 
-};
-
-module.exports = {
-    getDescription
- }; 
+export { getDescription };

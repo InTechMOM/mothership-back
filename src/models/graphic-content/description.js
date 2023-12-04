@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const descriptionSchema = new mongoose.Schema({
-    description: String,
+  description: String,
 });
 
-module.exports = mongoose.model('storyTelling', descriptionSchema);
+export default mongoose.model("storyTelling", descriptionSchema);

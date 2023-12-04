@@ -1,8 +1,8 @@
-const fs = require('fs');
-const https = require('https');
-const path = require('path');
+import fs from "fs";
+import https from "https";
+import path from "path";
 
-const dir = './public/pics';
+const dir = "./public/pics";
 
 function downloadImage(url, filename) {
   try {
@@ -28,14 +28,14 @@ function downloadImage(url, filename) {
 
 function listImages() {
   return new Promise((resolve, reject) => {
-    const imagesDirectory = path.join(__dirname, '../public/pics');
+    const imagesDirectory = path.join(__dirname, "../public/pics");
     fs.readdir(imagesDirectory, (err, files) => {
       if (err) {
         reject(err);
       } else {
         const imageFiles = files.filter((file) => {
           const fileExtension = path.extname(file).toLowerCase();
-          return ['.jpg', '.jpeg', '.png', '.gif'].includes(fileExtension);
+          return [".jpg", ".jpeg", ".png", ".gif"].includes(fileExtension);
         });
         resolve(imageFiles);
       }
@@ -43,4 +43,4 @@ function listImages() {
   });
 }
 
-module.exports = { downloadImage, listImages };
+export { downloadImage, listImages };

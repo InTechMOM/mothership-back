@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const audioSchema = new mongoose.Schema({
-    name: String,
-    duration: Number,
+  name: String,
+  duration: Number,
 });
 
-module.exports = mongoose.model('audio', audioSchema);
+export default mongoose.model("audio", audioSchema);

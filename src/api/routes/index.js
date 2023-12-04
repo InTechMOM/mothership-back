@@ -5,7 +5,7 @@ import swaggerSpecification from "../../config/swagger.js";
 import audioRouter from "./graphic-content/audioRouter.js";
 import descriptionRouter from "./graphic-content/descriptionRouter.js";
 import generateRouter from "./graphic-content/generateRouter.js";
-import imageRouter from "./graphic-content/imageRouter.js";
+import imageRouter from "./graphic-content/imagesRouter.js";
 
 const router = Router();
 

@@ -1,10 +1,7 @@
-const storyTelling = require('../models/descriptionModel');
+import storyTelling from "../../models/graphic-content/description.js";
 
-async function getDescription(){
-    return await storyTelling.findById();
+async function getDescription() {
+  return await storyTelling.findById();
 }
 
-
-module.exports = {
-    getDescription
-}; 
+export { getDescription };

@@ -1,15 +1,12 @@
-const audio = require('../models/audioModel');
+import audio from "../../models/graphic-content/audio.js";
 
-async function getAllAudios(){
-    return await audio.find();
+async function getAllAudios() {
+  return await audio.find();
 }
 
-async function createAudio(){
-    const newAudio = new audio(audioData);
-    return await newAudio.save();
+async function createAudio() {
+  const newAudio = new audio(audioData);
+  return await newAudio.save();
 }
 
-module.exports = {
-    getAllAudios,
-    createAudio
-}; 
+export { getAllAudios, createAudio };

@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from "axios";
 
-const apiKey = 'HvpxmlK0vQtSavzejIqPoiXo6ajnM3xZT8DEeVrKaGX0Pfh7XPFy22vub8V9';
+const apiKey = "HvpxmlK0vQtSavzejIqPoiXo6ajnM3xZT8DEeVrKaGX0Pfh7XPFy22vub8V9";
 
 function buildBodyInfo(description, numberOfPics) {
   return {
@@ -27,7 +27,11 @@ async function postTextToImage(bodyInfo) {
       "Content-Type": "application/json",
     },
   };
-  return await axios.post('https://stablediffusionapi.com/api/v3/text2img', JSON.stringify(bodyInfo), options);
+  return await axios.post(
+    "https://stablediffusionapi.com/api/v3/text2img",
+    JSON.stringify(bodyInfo),
+    options
+  );
 }
 
-module.exports = { buildBodyInfo, postTextToImage };
+export { buildBodyInfo, postTextToImage };

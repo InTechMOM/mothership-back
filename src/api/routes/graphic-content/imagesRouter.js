@@ -1,12 +1,11 @@
-const express = require('express');
+import express from "express";
+import imageController from "../../controllers/graphic-content/imageController.js";
 const imageRouter = express.Router();
-const imageController = require("../controllers/imageController")
-
 
 // Ver todos los audios
-imageRouter.get('/image', imageController.getAllImages);
+imageRouter.get("/image", imageController.getAllImages);
 
 // Crear audio - guardar
-imageRouter.post('/image', imageController.createImage);
+imageRouter.post("/image", imageController.createImage);
 
-module.exports = imageRouter;
+export default imageRouter;

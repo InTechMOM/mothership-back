@@ -1,4 +1,4 @@
-const Image = require('../services/imageService')
+import Image from "../../services/imageService.js";
 
 /**
  * @openapi
@@ -23,27 +23,24 @@ const Image = require('../services/imageService')
  *         description: Imágenes no encontradas
  */
 
-async function getAllImages(req, res){
-    try{
-        const images = await Image.getAllImages();
-        res.json(images);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    } 
-};
+async function getAllImages(req, res) {
+  try {
+    const images = await Image.getAllImages();
+    res.json(images);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
-async function createImage(req, res){
-    try{
-        const { name } = req.body; 
-        const newImage = new Image({ name });
-        const savedImage = await newImage.save();
-        res.status(201).json(savedImage);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    } 
-};
+async function createImage(req, res) {
+  try {
+    const { name } = req.body;
+    const newImage = new Image({ name });
+    const savedImage = await newImage.save();
+    res.status(201).json(savedImage);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
-module.exports = {
-   getAllImages,
-   createImage
-}; 
+export { getAllImages, createImage };

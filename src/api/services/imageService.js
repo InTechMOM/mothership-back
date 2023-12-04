@@ -1,15 +1,12 @@
-const images = require('../models/imagesModel');
+import images from "../../models/graphic-content/images.js";
 
-async function getAllImages(){
-    return await images.find();
+async function getAllImages() {
+  return await images.find();
 }
 
-async function createImage(){
-    const newImage = new images(imageData);
-    return await newImage.save();
+async function createImage() {
+  const newImage = new images(imageData);
+  return await newImage.save();
 }
 
-module.exports = {
-    getAllImages,
-    createImage
-}; 
+export { getAllImages, createImage };
