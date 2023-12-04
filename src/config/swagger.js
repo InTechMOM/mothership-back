@@ -1,6 +1,6 @@
 export default {
   swaggerDefinition: {
-    openapi: "3.0.1",
+    openapi: "3.1.0",
     info: {
       title: "Mothership IntechMom",
       version: "1.0.0",

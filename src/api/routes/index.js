@@ -13,9 +13,10 @@ router.use("/docs", serve);
 router.get("/docs", setup(swaggerJsdoc(swaggerSpecification)));
 
 // graphic=content
-router.use("/", audioRouter);
-router.use("/", descriptionRouter);
-router.use("/", generateRouter);
-router.use("/", imageRouter);
+router.use("/description", descriptionRouter);
+router.use("/generateImg", generateRouter);
+router.use("/generate/images", generateRouter);
+router.use("/image", imageRouter);
+router.use("/audio", audioRouter);
 
-export default router;
+module.exports = routerApi;
