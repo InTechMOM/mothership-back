@@ -18,5 +18,5 @@ export default {
       description: "API for users",
     },
   ],
-  apis: ["src/routes/index.js"],
+  apis: ["src/app.js", "src/routes/index.js"],
 };

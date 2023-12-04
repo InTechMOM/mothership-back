@@ -17,7 +17,7 @@ app.get("/", (_req, res) => {
   return res.status(200).json("Project is successfully working").end();
 });
 
-app.use("/", routes);
+app.use("/api", routes);
 
 app.listen(port, (error) => {
   if (error) {
