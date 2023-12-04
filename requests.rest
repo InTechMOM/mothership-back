@@ -1,1 +1,53 @@
-GET http://localhost:3000/
+### 
+POST http://localhost:3000/api/user HTTP/1.1
+Content-Type:application/json 
+
+{    
+    "nombre": "MARIBEL",
+    "enlace": "MARIBELNJASNAS@g",
+    "empresa": "PEPSI",
+    "mision": "SER UN ARTISTA ",
+    "genero": "NO SE SABE",
+    "protagonista": "LA HUERTA",
+    "objetivo": "TENER UN VIVERO TROPICAL",
+    "motivacion": "LA SALU MENTAL",
+    "malo": "EL CALOR",
+    "ayudante": "IMAGINARIO",
+    "actitud": "PACIFICA",
+    "mensaje": "CONECTAR CON LA NATURALEZA",
+    "comportamiento": "A LA LIGERA ",
+    "responseAI": ""
+}
+
+
+###
+GET http://localhost:3000/api/user HTTP/1.1
+
+
+###
+GET http://localhost:3000/api/user/6565153fefcf8c167605688e HTTP/1.1
+
+###
+PATCH  http://localhost:3000/api/user/654d22e8cf53a37c13c4d6fd HTTP/1.1
+Content-Type:application/json 
+
+{    
+    "nombre": "carlos",
+    "enlace": "MARIBELNJASNAS@g",
+    "empresa": "PEPSI",
+    "mision": "SER UN ARTISTA ",
+    "genero": "NO SE SABE",
+    "protagonista": "LA HUERTA",
+    "objetivo": "TENER UN VIVERO TROPICAL",
+    "motivacion": "LA SALU MENTAL",
+    "malo": "EL CALOR",
+    "ayudante": "IMAGINARIO",
+    "actitud": "PACIFICA",
+    "mensaje": "CONECTAR CON LA NATURALEZA",
+    "comportamiento": "A LA LIGERA ",
+    "responseAI": ""
+}
+ 
+
+###
+DELETE http://localhost:3000/api/user/6565153fefcf8c167605688e HTTP/1.1
