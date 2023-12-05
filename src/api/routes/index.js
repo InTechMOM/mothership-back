@@ -24,7 +24,7 @@ import deleteOne from './controllers/delete.js'
 
 const router = Router();
 
-router
+routergit 
   .post('/user', validateCreation, createUser)
   .get('/user',getByName)
   .patch('/user/:id', validatePatch, editUser)
