@@ -1,4 +1,4 @@
-import images from "../../../models/graphic-content/images.js";
+import imagesModel from "../../../models/graphic-content/images.js";
 
 /**
  * @openapi
@@ -25,7 +25,7 @@ import images from "../../../models/graphic-content/images.js";
 
 async function getAllImages(req, res) {
   try {
-    const images = await images.find();
+    const images = await imagesModel.find();
     res.json(images);
   } catch (error) {
     res.status(500).json({ error: error.message });
