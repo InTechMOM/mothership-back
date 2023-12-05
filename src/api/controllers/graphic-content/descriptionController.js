@@ -1,4 +1,4 @@
-import storyTelling from "../../services/descriptionService.js";
+import storyTelling from "../../../models/graphic-content/description.js";
 
 /**
  * @openapi
@@ -25,11 +25,10 @@ import storyTelling from "../../services/descriptionService.js";
 
 async function getDescription(req, res) {
   try {
-    const description = await storyTelling.getDescription();
-    res.json(description);
+    const description = await storyTelling.findById();
+    res.status(200).json(description);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
-
-export { getDescription };
+export default getDescription;

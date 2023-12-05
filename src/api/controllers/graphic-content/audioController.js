@@ -1,23 +1,23 @@
-import { getAllAudios, createAudio } from "../../services/audioService.js";
+import audio from "../../../models/graphic-content/audio.js";
 
-async function getAllAudiosController(req, res) {
+async function getAllAudios(req, res) {
   try {
-    const audios = await getAllAudios();
+    const audios = await await audio.find();
     res.json(audios);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
 
-async function createAudiosController(req, res) {
+async function createAudio(req, res) {
   try {
     const { name, duration } = req.body;
     const newAudio = new audio({ name, duration });
-    const savedAudio = await new save();
+    const savedAudio = await newAudio.save();
     res.status(201).json(savedAudio);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
 
-export { getAllAudiosController, createAudiosController };
+export { getAllAudios, createAudio };
