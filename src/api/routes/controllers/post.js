@@ -17,8 +17,7 @@ const archetypes = {
   },
   gobernante: {
     name: "gobernante",
-    description:
-      "Me hace sentir con el texto que eres un líder imponente.",
+    description: "Me hace sentir con el texto que eres un líder imponente.",
     keywords: "Prestígio, Liderazgo, Poder.",
   },
   comun: {
@@ -29,26 +28,22 @@ const archetypes = {
   },
   cuidador: {
     name: "cuidador",
-    description:
-      "Se sientas confortable, protegido .",
+    description: "Se sientas confortable, protegido .",
     keywords: "Amabilidad, cuidado, anidado.",
   },
   amante: {
     name: "amante",
-    description:
-      "Nos da deseo y demuestra fidelidad.",
+    description: "Nos da deseo y demuestra fidelidad.",
     keywords: "Amor, Lealtad, Fijación.",
   },
   bufon: {
     name: "bufon",
-    description:
-      "Quiero que el texto me haga reir.",
+    description: "Quiero que el texto me haga reir.",
     keywords: " Cómico, humor, fantasía.",
   },
   rebelde: {
     name: "rebelde",
-    description:
-      "Quero texto me haga sentir que puedo romper reglas.",
+    description: "Quero texto me haga sentir que puedo romper reglas.",
     keywords: "Rebeldía, obstinación y oposición.",
   },
   explorador: {
@@ -59,8 +54,7 @@ const archetypes = {
   },
   creativo: {
     name: "creativo",
-    description:
-      " Quiero que el texto despierte mi imaginación.",
+    description: " Quiero que el texto despierte mi imaginación.",
     keywords: "Imaginación, Invención, Creatividad.",
   },
   heroe: {
@@ -76,7 +70,6 @@ const archetypes = {
     keywords: "Libertad, magia, facilidad, geniosidad.",
   },
 
-  
   // Gobernante: Me hace sentir con el texto que eres un líder imponente. (descripción arquetipo)
   // Palabras clave: prestígio, liderazgo, poder.
   // Común: Vives una vida común, pero se va convertir en una persona mejor (descripción arquetipo)
@@ -101,12 +94,15 @@ const archetypes = {
 
 const createUser = async (req, res) => {
   try {
-    // const user = await User.create(req.body);
+    const mongoResponse = await User.create(req.body);
 
     // Promise.all
-    await generateStory(req.body);
+    const responseAi = await generateStory(req.body);
 
-    // res.status(201).json(`${user} Creado`);
+    res.status(201).json({
+      mongoResponse,
+      responseAi,
+    });
   } catch (error) {
     console.log(error);
     res.status(400).json({ message: "hay un error!?" });
@@ -168,13 +164,5 @@ async function generateStory(storyConfigs) {
     // max_tokens: 750 ???
   });
 
-  const responseOpenAI = chatCompletion.choices[0].message.content;
-
-  const updateData = await miModelo.findByIdAndUpdate(
-    historyId,
-    { responseAI: responseOpenAI },
-    { new: true }
-  );
-
-  console.log("Respuesta de OpenAI guardada en la base de datos:", updateData);
+  return chatCompletion.choices[0].message.content;
 }
