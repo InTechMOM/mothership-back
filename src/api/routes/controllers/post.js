@@ -6,11 +6,77 @@ const archetypes = {
   sabio: {
     name: "sabio",
     description:
-      "quiero que el texto me haga sentir que leo la verdad absoluta.",
+      "Quiero que el texto me haga sentir que leo la verdad absoluta.",
     keywords: "Conocedor, Confiable, Poderoso.",
   },
-  // Inocente: Quiero que el texto me hagas sentir que todo es bello y feliz (descripción arquetipo)
-  // Palabras Clave: Tranquilidad, felicidad, satisfacción
+  inocente: {
+    name: "inocente",
+    description:
+      "Quiero que el texto me hagas sentir que todo es bello y feliz.",
+    keywords: "Tranquilidad, Felicidad, satisfacción.",
+  },
+  gobernante: {
+    name: "gobernante",
+    description:
+      "Me hace sentir con el texto que eres un líder imponente.",
+    keywords: "Prestígio, Liderazgo, Poder.",
+  },
+  comun: {
+    name: "comun",
+    description:
+      "Vives una vida común, pero se va convertir en una persona mejor.",
+    keywords: "mérito, esfuerzo, vida tranquila.",
+  },
+  cuidador: {
+    name: "cuidador",
+    description:
+      "Se sientas confortable, protegido .",
+    keywords: "Amabilidad, cuidado, anidado.",
+  },
+  amante: {
+    name: "amante",
+    description:
+      "Nos da deseo y demuestra fidelidad.",
+    keywords: "Amor, Lealtad, Fijación.",
+  },
+  bufon: {
+    name: "bufon",
+    description:
+      "Quiero que el texto me haga reir.",
+    keywords: " Cómico, humor, fantasía.",
+  },
+  rebelde: {
+    name: "rebelde",
+    description:
+      "Quero texto me haga sentir que puedo romper reglas.",
+    keywords: "Rebeldía, obstinación y oposición.",
+  },
+  explorador: {
+    name: "explorador",
+    description:
+      "Quiero que me haga sentir que vamos a descubrir algo nuevo, o que me llevas en una aventura.",
+    keywords: "Sin límites, pionero, explorador.",
+  },
+  creativo: {
+    name: "creativo",
+    description:
+      " Quiero que el texto despierte mi imaginación.",
+    keywords: "Imaginación, Invención, Creatividad.",
+  },
+  heroe: {
+    name: "heroe",
+    description:
+      "Quiere que el texto me haga creer que puedo superar desafíos con valentía sobrepasar los  límites.",
+    keywords: "Grandiosidad, resistencia, inspiración.",
+  },
+  mago: {
+    name: "mago",
+    description:
+      "Quiero que el texto me haga sentir que todo se resuelve de forma sencilla.",
+    keywords: "Libertad, magia, facilidad, geniosidad.",
+  },
+
+  
   // Gobernante: Me hace sentir con el texto que eres un líder imponente. (descripción arquetipo)
   // Palabras clave: prestígio, liderazgo, poder.
   // Común: Vives una vida común, pero se va convertir en una persona mejor (descripción arquetipo)

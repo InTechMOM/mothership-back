@@ -8,7 +8,7 @@ import { validateCreation, validatePatch } from "./validation/post.js";
 import { getByName } from "./controllers/get.js";
 
 import { createUser } from "./controllers/post.js";
-import { editUser } from "./controllers/patch.js";
+import  editUser  from "./controllers/patch.js";
 import deleteOne from "./controllers/delete.js";
 
 const router = Router();
