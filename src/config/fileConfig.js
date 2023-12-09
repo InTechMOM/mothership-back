@@ -17,8 +17,6 @@ function downloadImage(url, filename) {
         if (response.statusCode === 200) {
           response.pipe(file);
         }
-
-        // Aquí, no necesitas llamar a request.abort() ya que no estamos haciendo nada en caso de error
       });
     }
   } catch (err) {
