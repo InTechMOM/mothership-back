@@ -56,9 +56,11 @@ const miModelo = new Schema({
   responseAI: {
     type: String,
     required: false
-}
-
-  
+  },
+  responseAIdos: {
+      type: String,
+      required: false
+}  
 });
 
 export default model('User', miModelo);

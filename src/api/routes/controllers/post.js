@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import User from "../../../models/users.js";
 import { openAiApiKey } from "../../../config/index.js";
 
+
 const archetypes = {
   sabio: {
     name: "sabio",
@@ -69,27 +70,6 @@ const archetypes = {
       "Quiero que el texto me haga sentir que todo se resuelve de forma sencilla.",
     keywords: "Libertad, magia, facilidad, geniosidad.",
   },
-
-  // Gobernante: Me hace sentir con el texto que eres un líder imponente. (descripción arquetipo)
-  // Palabras clave: prestígio, liderazgo, poder.
-  // Común: Vives una vida común, pero se va convertir en una persona mejor (descripción arquetipo)
-  // Palabras Clave: mérito, esfuerzo, vida tranquila
-  // Cuidador: Se sientas confortable, protegido (descripción arquetipo)
-  // Palabras Clave: Amabilidad, cuidado, anidado
-  // Amante: Nos dá deseo y demonstra fidelidad (descripción arquetipo)
-  // Palabras Clave: Amor, Lealtad, Fijación
-  // Bufón: Quiero que el texto me haga reir (descripción arquetipo)
-  // Palabras clave: Cómico, humor, fantasía
-  // Rebelde: Quero texto me haga sentir que puedo romper reglas (descripción arquetipo)
-  // Palabras clave: Rebeldía, obstinación y oposición
-  // Explorador: Quiero que me haga sentir que vamos a descubrir algo nuevo, o que me llevas en una aventura (descripción arquetipo)
-  // Palabras clave: Sin límites, pioneiro, explorador
-  // Creativo: Quiero que el texto despierte mi imaginación (descripción arquetipo)
-  // Palabras clave: Imaginación, Invención, Creatividad
-  // Héroe: Quiere que el texto me haga creer que puedo superar desafíos con valentía sobrepasar los  límites (descripción arquetipo)
-  // Palabras clave: Grandiosidad, resistencia, inspiración
-  // Mago: Quiero que el texto me haga sentir que todo se resuelve de forma sencilla. (descripción arquetipo)
-  // Palabras clave: Libertad, magia, facilidad, geniosidad
 };
 
 const createUser = async (req, res) => {
@@ -154,15 +134,19 @@ async function generateStory(storyConfigs) {
 
     Primero, escribe el storytelling 3 párrafos de 250 caracteres cada uno.
 
-    Segundo, escribe otro texto más corto de 180 caracteres conteniendo hashtags y emojis, para divulgación en las redes sociales de la misma narrativa.
+    Segundo, escribe otro texto más corto de 180 caracteres conteniendo hashtags y emojis, para divulgación en las redes sociales de la misma narrativa. Este segunto texto ponlo entre $$$
     `;
 
+
+
+
   const chatCompletion = await openAiInstance.chat.completions.create({
-    messages: [{ role: "user", content: mensajeUsuario }],
+    messages: [{ role: "user", content: mensajeUsuario,  }],
     model: "gpt-3.5-turbo",
     temperature: 0.7,
-    // max_tokens: 750 ???
+    
   });
+ 
 
   return chatCompletion.choices[0].message.content;
 }
